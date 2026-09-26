@@ -25,43 +25,6 @@ body:
     validations:
       required: true
 
-  - type: dropdown
-    id: repository-label
-    attributes:
-      label: Repository label
-      description: Select the required repository label (`r:*`) to apply.
-      options:
-        - r:portfolio
-        - r:platform
-        - r:infra
-    validations:
-      required: true
-
-  - type: dropdown
-    id: priority-label
-    attributes:
-      label: Priority label
-      description: Select the required priority label (`p*`) to apply.
-      options:
-        - p0
-        - p1
-        - p2
-        - p3
-    validations:
-      required: true
-
-  - type: dropdown
-    id: dependency-label
-    attributes:
-      label: Dependency label
-      description: Select the dependency label (`dep:*`) to apply.
-      options:
-        - dep:blocking
-        - dep:blocked
-        - dep:none
-    validations:
-      required: true
-
   - type: textarea
     id: acceptance
     attributes:
