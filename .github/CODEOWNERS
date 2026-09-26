@@ -1,5 +1,4 @@
 # Sensitive governance and automation paths require repository owner review.
-* @DevOpsDerek
 
 /.github/** @DevOpsDerek
 /GOVERNANCE.md @DevOpsDerek
