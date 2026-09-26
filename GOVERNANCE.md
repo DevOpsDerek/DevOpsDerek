@@ -64,6 +64,6 @@ Sensitive paths include repository governance, automation, and any future deploy
 - `/infra/**`
 - `/deploy/**`
 - `/scripts/deploy/**`
-- `/**/*.bicep`
-- `/**/*.tf`
-- `/**/*.tfvars`
+- `*.bicep`
+- `*.tf`
+- `*.tfvars`
