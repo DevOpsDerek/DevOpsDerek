@@ -5,9 +5,6 @@
 /infra/** @DevOpsDerek
 /deploy/** @DevOpsDerek
 /scripts/deploy/** @DevOpsDerek
-*.bicep @DevOpsDerek
-*.tf @DevOpsDerek
-*.tfvars @DevOpsDerek
 **/*.bicep @DevOpsDerek
 **/*.tf @DevOpsDerek
 **/*.tfvars @DevOpsDerek
