@@ -57,13 +57,10 @@ permissions:
 
 ## Sensitive paths requiring Code Owner review
 
-Sensitive paths include repository governance, automation, and any future deployment or infrastructure definitions. Infrastructure-as-code file types are treated as sensitive wherever they appear in the repository:
+Sensitive paths include repository governance, automation, and any future deployment or infrastructure definitions. If infrastructure-as-code or deployment files are introduced later, keep them under one of the protected directories below so Code Owner review is enforced consistently:
 
 - `/.github/**`
 - `/GOVERNANCE.md`
 - `/infra/**`
 - `/deploy/**`
 - `/scripts/deploy/**`
-- `*.bicep`
-- `*.tf`
-- `*.tfvars`
