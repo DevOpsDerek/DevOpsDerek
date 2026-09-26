@@ -1,11 +1,11 @@
 # Sensitive governance and automation paths require repository owner review.
 * @DevOpsDerek
 
-/.github/ @DevOpsDerek
+/.github/** @DevOpsDerek
 /GOVERNANCE.md @DevOpsDerek
-/infra/ @DevOpsDerek
-/deploy/ @DevOpsDerek
-/scripts/deploy/ @DevOpsDerek
+/infra/** @DevOpsDerek
+/deploy/** @DevOpsDerek
+/scripts/deploy/** @DevOpsDerek
 *.bicep @DevOpsDerek
 *.tf @DevOpsDerek
 *.tfvars @DevOpsDerek
