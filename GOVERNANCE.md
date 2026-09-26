@@ -57,7 +57,7 @@ permissions:
 
 ## Sensitive paths requiring Code Owner review
 
-Sensitive paths include repository governance, automation, and any future deployment or infrastructure definitions:
+Sensitive paths include repository governance, automation, and any future deployment or infrastructure definitions. Infrastructure-as-code file types are treated as sensitive wherever they appear in the repository:
 
 - `/.github/**`
 - `/GOVERNANCE.md`
