@@ -1,0 +1,7 @@
+# Sensitive governance and automation paths require repository owner review.
+
+/.github/** @DevOpsDerek
+/GOVERNANCE.md @DevOpsDerek
+/infra/** @DevOpsDerek
+/deploy/** @DevOpsDerek
+/scripts/deploy/** @DevOpsDerek
