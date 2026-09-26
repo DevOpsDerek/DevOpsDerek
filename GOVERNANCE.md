@@ -85,9 +85,9 @@ All portfolio repositories should include the same contribution contract:
 - `/.github/pull_request_template.md`
 - `docs/adr/0000-template.md`
 
-Use compact labels so planning views stay scannable:
+Use compact labels so planning views stay scannable. The `work-item` template applies defaults (`r:portfolio`, `p2`, `dep:none`) at issue creation; maintainers can adjust labels as needed:
 
-- Repository: `r:portfolio`, `r:platform`, `r:infra` (one required)
-- Priority: `p0`, `p1`, `p2`, `p3` (one required)
+- Repository: `r:portfolio`, `r:platform`, `r:infra`
+- Priority: `p0`, `p1`, `p2`, `p3`
 - Dependency: `dep:blocking`, `dep:blocked`, `dep:none`
 - Agent readiness: `agent:ready`, `agent:needs-context`, `agent:needs-owner`
