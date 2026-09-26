@@ -3,6 +3,9 @@ description: Track a portfolio change with clear scope, dependencies, and valida
 title: "[WORK]: "
 labels:
   - "agent:ready"
+  - "r:portfolio"
+  - "p2"
+  - "dep:none"
 body:
   - type: textarea
     id: scope
