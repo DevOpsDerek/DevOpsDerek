@@ -1,0 +1,59 @@
+name: Work item
+description: Track a portfolio change with clear scope, dependencies, and validation needs.
+title: "[WORK]: "
+labels:
+  - "agent:ready"
+body:
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope
+      description: What is in scope and out of scope for this issue?
+      placeholder: In scope..., Out of scope...
+    validations:
+      required: true
+
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: Dependencies
+      description: List upstream/downstream issues, ADRs, or PRs.
+      placeholder: "Depends on #..., blocks #..., ADR ..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: Define objective conditions for completion.
+      placeholder: "- [ ] ..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: validation
+    attributes:
+      label: Validation evidence required
+      description: What evidence is required to prove completion (tests, screenshots, logs, links)?
+      placeholder: Test command output, screenshot links, policy checks...
+    validations:
+      required: true
+
+  - type: textarea
+    id: risks
+    attributes:
+      label: Risks
+      description: What could go wrong and what safeguards exist?
+      placeholder: Risk..., mitigation...
+    validations:
+      required: true
+
+  - type: textarea
+    id: rollback
+    attributes:
+      label: Rollback notes
+      description: How will this be reversed safely if needed?
+      placeholder: Revert plan, data recovery notes...
+    validations:
+      required: true

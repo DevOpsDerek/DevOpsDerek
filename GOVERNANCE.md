@@ -30,6 +30,8 @@ Apply these defaults to the repository's default branch:
 
 This repository should treat every configured continuous-integration check as required before merge. While the repository is documentation-only today, any future validation workflow added for markdown, links, policy, or tests must be marked as a required status check in branch protection before it becomes part of the normal contribution flow.
 
+Passing checks are evidence, not ownership transfer. Repository owners and reviewers remain accountable for security, compliance, policy, and release-risk decisions even when all automated checks are green.
+
 ## GitHub Actions permissions
 
 Use least-privilege permissions by default:
@@ -64,3 +66,28 @@ Sensitive paths include repository governance, automation, and any future deploy
 - `/infra/**`
 - `/deploy/**`
 - `/scripts/deploy/**`
+
+## Architecture decision records (ADRs)
+
+Use ADRs for decisions that impact more than one pull request or more than one contributor. ADRs should be stored in `docs/adr/` using the repository template at `docs/adr/0000-template.md`.
+
+Decision placement across the portfolio:
+
+- If a decision only affects this repository, record the ADR in this repository.
+- If a decision affects multiple repositories, open matching ADRs in each affected repository and cross-link them to preserve local ownership and review history.
+- If implementation details differ by repository, keep a shared context/problem statement but document repository-specific consequences in each ADR.
+
+## Contribution templates and labels
+
+All portfolio repositories should include the same contribution contract:
+
+- `/.github/ISSUE_TEMPLATE/work-item.yml`
+- `/.github/pull_request_template.md`
+- `docs/adr/0000-template.md`
+
+Use compact labels so planning views stay scannable. The `work-item` template applies defaults (`r:portfolio`, `p2`, `dep:none`) at issue creation; maintainers can adjust labels as needed:
+
+- Repository: `r:portfolio`, `r:platform`, `r:infra`
+- Priority: `p0`, `p1`, `p2`, `p3`
+- Dependency: `dep:blocking`, `dep:blocked`, `dep:none`
+- Agent readiness: `agent:ready`, `agent:needs-context`, `agent:needs-owner`
