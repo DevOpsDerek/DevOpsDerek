@@ -84,9 +84,8 @@ All portfolio repositories should include the same contribution contract:
 - `/.github/ISSUE_TEMPLATE/work-item.yml`
 - `/.github/pull_request_template.md`
 - `docs/adr/0000-template.md`
-- `/.github/labels.yml`
 
-Use compact labels so planning views stay scannable. Label definitions are tracked in `/.github/labels.yml`; apply and maintain them in repository settings so issues and PRs can be labeled consistently:
+Use compact labels so planning views stay scannable. Apply and maintain labels in repository settings so issues and PRs can be labeled consistently:
 
 - Repository: `r:portfolio`, `r:platform`, `r:infra`
 - Priority: `p0`, `p1`, `p2`, `p3`
