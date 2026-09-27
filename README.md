@@ -77,4 +77,4 @@ This repository is part of a public portfolio and is governed by the standards i
 
 ### Portfolio rollout standard
 
-Apply the same three template files and label convention to every portfolio repository so work items, decisions, and pull requests stay reviewable with a consistent structure and starting label baseline across repositories.
+Apply the same template files and label convention to every portfolio repository so work items, decisions, and pull requests stay reviewable with a consistent structure and starting label baseline across repositories.

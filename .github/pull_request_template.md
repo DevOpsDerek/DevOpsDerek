@@ -32,4 +32,4 @@
 
 ## Ownership reminder
 
-Passing automated checks does not replace human responsibility for security, policy, and release decisions.
+Passing automated checks does not replace human responsibility for security, policy, and release decisions (see `GOVERNANCE.md`).
