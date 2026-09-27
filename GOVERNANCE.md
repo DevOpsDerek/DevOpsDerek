@@ -84,6 +84,7 @@ All portfolio repositories should include the same contribution contract:
 - `/.github/ISSUE_TEMPLATE/work-item.yml`
 - `/.github/pull_request_template.md`
 - `docs/adr/0000-template.md`
+- `/.github/labels.yml`
 
 Use compact labels so planning views stay scannable. The `work-item` template applies defaults (`r:portfolio`, `p2`, `dep:none`, `agent:ready`) at issue creation; maintainers can adjust labels as needed:
 
