@@ -2,6 +2,9 @@ name: Work item
 description: Track a portfolio change with clear scope, dependencies, and validation needs.
 title: "[WORK]: "
 labels:
+  - "r:portfolio"
+  - "p2"
+  - "dep:none"
   - "agent:ready"
 body:
   - type: textarea
