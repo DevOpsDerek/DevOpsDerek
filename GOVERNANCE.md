@@ -32,6 +32,13 @@ This repository should treat every configured continuous-integration check as re
 
 Passing checks are evidence, not ownership transfer. Repository owners and reviewers remain accountable for security, compliance, policy, and release-risk decisions even when all automated checks are green.
 
+The central automation validator and manually triggered documentation-upkeep
+proposal workflow are described in [Operations](./docs/operations.md). They do
+not provide Markdown/link or public-content-policy checks. Adoption does not
+enable branch protection: inventory found no classic protection or effective
+rules on `main`. An administrator must configure required checks and review
+controls; these policy expectations alone do not enforce them.
+
 ## GitHub Actions permissions
 
 Use least-privilege permissions by default:
