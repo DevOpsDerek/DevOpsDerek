@@ -33,7 +33,7 @@ class HelmUpgradeExampleTests(unittest.TestCase):
         if shutil.which("helm") is None:
             raise RuntimeError("Helm 3 is required to render the upgrade example")
 
-    def test_patch_upgrade_preserves_release_contract(self) -> None:
+    def test_minor_upgrade_preserves_release_contract(self) -> None:
         before = render("chart-1.0.0", "values-before.yaml")
         after = render("chart-1.1.0", "values-after.yaml")
 
