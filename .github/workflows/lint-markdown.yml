@@ -21,7 +21,7 @@ permissions:
 
 jobs:
   markdown:
-    uses: DevOpsDerek/workflows/.github/workflows/lint-markdown.yml@35ec3f531b5eb0f0f42f232f23e1dc5735e36c35
+    uses: DevOpsDerek/workflows/.github/workflows/lint-markdown.yml@5ecebff22598835cbf5ccd7bfa07c036cce22ee9
     with:
       working-directory: .
       markdown-paths: |-
