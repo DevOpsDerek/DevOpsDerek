@@ -55,7 +55,7 @@ Install the GitHub CLI gh-aw extension at `v0.89.21`; install Go to run stock
 
 ```sh
 gh aw compile --validate --actionlint --no-check-update --dir .github/workflows
-git diff --exit-code -- .github/workflows/documentation-upkeep.lock.yml
+git diff --exit-code -- .github/workflows/documentation-upkeep.lock.yml .github/aw/actions-lock.json
 go run github.com/rhysd/actionlint/cmd/actionlint@v1.7.12
 git diff --check
 ```
