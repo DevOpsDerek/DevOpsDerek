@@ -5,6 +5,7 @@ on:
     paths:
       - README.md
       - docs/**/*.md
+      - examples/**/*.md
       - .markdownlint-cli2.jsonc
       - .github/workflows/lint-markdown.yml
   push:
@@ -12,6 +13,7 @@ on:
     paths:
       - README.md
       - docs/**/*.md
+      - examples/**/*.md
       - .markdownlint-cli2.jsonc
       - .github/workflows/lint-markdown.yml
   workflow_dispatch:
@@ -27,5 +29,6 @@ jobs:
       markdown-paths: |-
         README.md
         docs/**/*.md
+        examples/**/*.md
     permissions:
       contents: read

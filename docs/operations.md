@@ -7,12 +7,14 @@
 | Local Kubernetes validation (kind/Helm) | Verified when run in contributor environment |
 | CI workflow outcomes | Verified through repository CI status/check results |
 | Live Azure runtime evidence | Not claimed in this repository |
+| Golden-path adoption, policy, CI reliability, and agent evaluation baselines | Not measured |
 
 ## Operating approach
 
 - Prefer local reproducibility first (`kind`, Helm charts, and manifest checks).
 - Use CI for repeatable quality and policy checks before merge.
 - Treat AKS and Azure policy patterns as target-state architecture references unless explicitly backed by run evidence in linked repositories.
+- Use the proposed [lifecycle policy and feedback measures](./lifecycle.md) as definitions only; they are not evidence that linked repositories meet the policy or that any outcome has improved.
 
 ## Incident and change posture
 
@@ -23,19 +25,23 @@
 ## Portfolio automation
 
 This documentation-only repository has no application build, package manifest,
-or test suite. Its checked-in automation is limited to:
+production deployment, or live service. Its checked-in automation is limited to:
 
 - `Validate portfolio automation`: pull requests, pushes to `main`, and manual
   runs call the central Actions/gh-aw validator with `contents: read` and no
-  inherited secrets.
+  inherited secrets, and run the offline Helm upgrade test with pinned Python
+  and Helm versions.
 - `Portfolio documentation upkeep`: manual runs import the central documentation
   pattern, with read-only agent permissions and at most one safe-output draft PR.
   Proposals are limited to `README.md` and `docs/**/*.md`, excluding
   `docs/security.md`; governance, automation, security policy, and deployment
   changes are outside its scope. There is no schedule or autonomous merge.
 - `Lint Markdown`: pull requests and pushes to `main` run the central Markdown
-  style linter, scoped to `README.md` and `docs/**/*.md`. It is read-only and
-  does not check external links.
+  style linter, scoped to `README.md`, `docs/**/*.md`, and `examples/**/*.md`.
+  It is read-only and does not check external links.
+- A local, offline-tested Helm chart upgrade example is covered by a Python
+  standard-library test. It renders both chart versions but does not connect to
+  a cluster or apply a release.
 
 The automation validator and documentation-upkeep import are pinned to
 [`dac4b81c298cb3ea6821ea312efa5375f42d5ccb`](https://github.com/DevOpsDerek/workflows/tree/dac4b81c298cb3ea6821ea312efa5375f42d5ccb).
@@ -76,7 +82,13 @@ The Markdown check uses the central workflow's Node.js `22.15.0` and
 locally from the repository root, use:
 
 ```sh
-npx --yes markdownlint-cli2@0.17.2 README.md 'docs/**/*.md'
+npx --yes markdownlint-cli2@0.17.2 README.md 'docs/**/*.md' 'examples/**/*.md'
+```
+
+To run the offline Helm upgrade example test (requires Helm 3 and Python 3):
+
+```sh
+python3 -m unittest discover -s tests -v
 ```
 
 The central catalog does not provide external link checking or a
@@ -105,3 +117,8 @@ are therefore not evidence of enforced controls. A repository administrator must
 configure them, including the actual check names emitted by the central validator,
 before treating automation as a required merge gate. Keep documentation proposals
 as drafts until human review; green checks never authorize merging or publishing.
+The validation checks currently reported for this repository are `Test Helm
+upgrade example`, `markdown / markdownlint-cli2`, and `validate / Validate
+Actions and gh-aw sources`. Verify current check names before configuring them;
+workflow or job renames may change those names. They are not required checks
+until an administrator configures branch protection or effective rules.

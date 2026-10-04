@@ -29,5 +29,6 @@ Describe a Principal-level Azure platform product approach where agentic enginee
 - [Getting started](./getting-started.md)
 - [Security](./security.md)
 - [Operations](./operations.md)
+- [Lifecycle and feedback measures](./lifecycle.md)
 - [Architecture decisions](./decisions.md)
 - [Repository links](./repositories.md)

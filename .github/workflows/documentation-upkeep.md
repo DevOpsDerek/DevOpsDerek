@@ -45,9 +45,12 @@ a live production Azure deployment. Do not claim configured branch protection
 or required checks unless verified; their documented expectations are not proof
 of enforcement.
 
-This repository has no application tests or dedicated Markdown/link CI yet.
-Use the documentation validation guidance in docs/operations.md; report checks
-not run rather than inventing successful results. If there is no clear, evidenced
-documentation mismatch, make no proposal. Any proposal must remain one small
-draft pull request for human review; never merge, release, deploy, apply
-infrastructure, publish, or directly push to the default branch.
+This repository has no application-level test suite or external-link CI. The
+dedicated Markdown style workflow covers `README.md`, `docs/**/*.md`, and
+`examples/**/*.md`; `Validate portfolio automation` also runs an offline Helm
+rendering test. Use the documentation validation guidance in
+`docs/operations.md`; report checks not run rather than inventing successful
+results. If there is no clear, evidenced documentation mismatch, make no
+proposal. Any proposal must remain one small draft pull request for human
+review; never merge, release, deploy, apply infrastructure, publish, or
+directly push to the default branch.
