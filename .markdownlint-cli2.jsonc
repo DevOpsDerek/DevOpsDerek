@@ -1,0 +1,7 @@
+{
+  // Long prose and links are not subject to a hard line-length limit.
+  "config": {
+    "MD013": false
+  },
+  "fix": false
+}

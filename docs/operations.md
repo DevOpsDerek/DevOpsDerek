@@ -33,8 +33,11 @@ or test suite. Its checked-in automation is limited to:
   Proposals are limited to `README.md` and `docs/**/*.md`, excluding
   `docs/security.md`; governance, automation, security policy, and deployment
   changes are outside its scope. There is no schedule or autonomous merge.
+- `Lint Markdown`: pull requests and pushes to `main` run the central Markdown
+  style linter, scoped to `README.md` and `docs/**/*.md`. It is read-only and
+  does not check external links.
 
-Both central references are pinned to
+The automation validator and documentation-upkeep import are pinned to
 [`dac4b81c298cb3ea6821ea312efa5375f42d5ccb`](https://github.com/DevOpsDerek/workflows/tree/dac4b81c298cb3ea6821ea312efa5375f42d5ccb).
 The source `.github/workflows/documentation-upkeep.md` and generated
 `documentation-upkeep.lock.yml` must be reviewed and committed together. Imports
@@ -68,12 +71,19 @@ Commit the compiler-generated `.github/aw/actions-lock.json` and `.gitattributes
 as well. Downloaded `.github/aw/imports/` files are an ignored compilation cache,
 not local copies of the central implementation.
 
-The central catalog currently provides automation validation, not Markdown
-linting, link checking, or a portfolio-governance validator. Those checks remain
-deferred rather than implemented locally. Review relative documentation links,
-external portfolio links, public-content safety, and governance consistency
-manually; record results and any checks not run in the PR template. Do not
-interpret Actions/gh-aw validation as Markdown/link/content-policy validation.
+The Markdown check uses the central workflow's Node.js `22.15.0` and
+`markdownlint-cli2` `0.17.2` defaults. To run the same scoped style check
+locally from the repository root, use:
+
+```sh
+npx --yes markdownlint-cli2@0.17.2 README.md 'docs/**/*.md'
+```
+
+The central catalog does not provide external link checking or a
+portfolio-governance validator. Review relative documentation links, external
+portfolio links, public-content safety, and governance consistency manually;
+record results and any checks not run in the PR template. Do not interpret
+Markdown style lint or Actions/gh-aw validation as link/content-policy checks.
 
 ### Activation and human review
 

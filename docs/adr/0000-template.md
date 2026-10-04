@@ -1,10 +1,10 @@
-# ADR-0000: <short decision title>
+# ADR-0000: &lt;short decision title&gt;
 
 - Status: Proposed | Accepted | Superseded
 - Date: YYYY-MM-DD
 - Owners: @handle
-- Related issue(s): #<id>
-- Related PR(s): #<id>
+- Related issue(s): #&lt;id&gt;
+- Related PR(s): #&lt;id&gt;
 
 ## Context
 
