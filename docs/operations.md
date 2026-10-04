@@ -117,3 +117,8 @@ are therefore not evidence of enforced controls. A repository administrator must
 configure them, including the actual check names emitted by the central validator,
 before treating automation as a required merge gate. Keep documentation proposals
 as drafts until human review; green checks never authorize merging or publishing.
+The validation checks currently reported for this repository are `Test Helm
+upgrade example`, `markdown / markdownlint-cli2`, and `validate / Validate
+Actions and gh-aw sources`. Verify current check names before configuring them;
+workflow or job renames may change those names. They are not required checks
+until an administrator configures branch protection or effective rules.
