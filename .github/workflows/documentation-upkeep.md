@@ -9,7 +9,7 @@ inlined-imports: true
 features:
   group-concurrency-queue: false
 imports:
-  - DevOpsDerek/workflows/.github/workflows/shared/agentic/documentation-upkeep.md@57da3f99768c3403cb688b1729d3dfc146c7cd4b
+  - DevOpsDerek/workflows/.github/workflows/shared/agentic/documentation-upkeep.md@dac4b81c298cb3ea6821ea312efa5375f42d5ccb
 safe-outputs:
   github-token: ${{ secrets.GITHUB_TOKEN }}
   create-pull-request:

@@ -35,7 +35,7 @@ or test suite. Its checked-in automation is limited to:
   changes are outside its scope. There is no schedule or autonomous merge.
 
 Both central references are pinned to
-[`57da3f99768c3403cb688b1729d3dfc146c7cd4b`](https://github.com/DevOpsDerek/workflows/tree/57da3f99768c3403cb688b1729d3dfc146c7cd4b).
+[`dac4b81c298cb3ea6821ea312efa5375f42d5ccb`](https://github.com/DevOpsDerek/workflows/tree/dac4b81c298cb3ea6821ea312efa5375f42d5ccb).
 The source `.github/workflows/documentation-upkeep.md` and generated
 `documentation-upkeep.lock.yml` must be reviewed and committed together. Imports
 are inlined at compile time; the agent does not need to check out the catalog at
