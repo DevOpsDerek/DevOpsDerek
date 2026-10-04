@@ -17,13 +17,9 @@ python3 -m unittest discover -s tests -v
 ```
 
 After reviewing the rendered diff and validating the target cluster's
-compatibility, the corresponding apply command is:
+compatibility, publish the chart change through the consumer's GitOps source
+and let Argo CD reconcile it. Do not apply this fixture directly with Helm; no
+cluster apply or Argo CD sync is part of this example.
 
-```sh
-helm upgrade --install sample-api examples/helm-upgrade/chart-1.1.0 \
-  --namespace example --create-namespace \
-  --values examples/helm-upgrade/values-after.yaml
-```
-
-That command is illustrative and was **not** run. The test only renders local
-manifests; it does not contact a cluster or claim the release was applied.
+The test only renders local manifests. It does not contact a cluster or claim
+the release was applied.
