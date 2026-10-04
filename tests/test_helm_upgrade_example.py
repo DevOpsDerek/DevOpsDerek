@@ -56,8 +56,9 @@ class HelmUpgradeExampleTests(unittest.TestCase):
 
         for manifest in (before, after):
             with self.subTest(manifest="release contract"):
-                self.assertIn("name: sample-api", manifest)
-                self.assertIn("replicas: 2", manifest)
+                self.assertIn("kind: Deployment\n", manifest)
+                self.assertIn("metadata:\n  name: sample-api\n", manifest)
+                self.assertIn("spec:\n  replicas: 2\n", manifest)
                 self.assertIn("app.kubernetes.io/instance: sample-api", manifest)
                 self.assertIn("app.kubernetes.io/name: sample-api", manifest)
                 selector_labels = mapping_after(manifest, "    matchLabels:", 6)
