@@ -1,8 +1,10 @@
 # Offline Helm chart upgrade example
 
-This example rehearses the chart update from `1.0.0` to `1.1.0` without a
+This example rehearses a chart minor upgrade from `1.0.0` to `1.1.0` without a
 Kubernetes cluster. The release name and replica count remain stable while the
-container image patch version changes.
+nginx image is updated from the manifest digest for `1.27.4` to the manifest
+digest for `1.27.5`. Both immutable digests were resolved from Docker Hub; the
+test verifies that only the pinned image reference changes.
 
 Render both revisions and run the invariant test from the repository root:
 

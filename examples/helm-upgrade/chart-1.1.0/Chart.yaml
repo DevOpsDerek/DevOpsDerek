@@ -1,6 +1,6 @@
 apiVersion: v2
 name: sample-api
-description: Minimal offline fixture for a Helm chart patch upgrade
+description: Minimal offline fixture for a Helm chart minor upgrade
 type: application
 version: 1.1.0
 appVersion: "1.27.5"

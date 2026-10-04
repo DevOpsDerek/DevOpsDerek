@@ -44,10 +44,20 @@ class HelmUpgradeExampleTests(unittest.TestCase):
                 self.assertIn("app.kubernetes.io/instance: sample-api", manifest)
                 self.assertIn("app.kubernetes.io/name: sample-api", manifest)
 
-        self.assertIn('image: "nginx:1.27.4"', before)
-        self.assertIn('image: "nginx:1.27.5"', after)
+        before_image = (
+            'image: "nginx@sha256:'
+            "09369da6b10306312cd908661320086bf87fbae1b6b0c49a1f50ba531fef2eab"
+            '"'
+        )
+        after_image = (
+            'image: "nginx@sha256:'
+            "6784fb0834aa7dbbe12e3d7471e69c290df3e6ba810dc38b34ae33d3c1c05f7d"
+            '"'
+        )
+        self.assertIn(before_image, before)
+        self.assertIn(after_image, after)
         self.assertEqual(
-            before.replace('image: "nginx:1.27.4"', 'image: "nginx:1.27.5"'),
+            before.replace(before_image, after_image),
             after,
         )
 

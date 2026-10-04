@@ -37,11 +37,11 @@ end-of-life.
 ## Upgrade example
 
 [`examples/helm-upgrade/README.md`](../examples/helm-upgrade/README.md)
-shows a patch upgrade from chart 1.0.0 to 1.1.0 while preserving the release
+shows a minor chart upgrade from 1.0.0 to 1.1.0 while preserving the release
 name, replica count, and selector. Its test renders both versions locally with
-`helm template` and checks those invariants and the intended image change. This
-is an offline render test, not a cluster upgrade; no cluster was contacted or
-changed.
+`helm template` and checks those invariants and the change between two
+Docker-Hub-resolved immutable image digests. This is an offline render test,
+not a cluster upgrade; no cluster was contacted or changed.
 
 ## Proposed indicators
 

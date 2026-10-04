@@ -19,4 +19,4 @@ spec:
     spec:
       containers:
         - name: sample-api
-          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          image: "{{ .Values.image.repository }}@{{ .Values.image.digest }}"
