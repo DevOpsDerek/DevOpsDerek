@@ -7,12 +7,14 @@
 | Local Kubernetes validation (kind/Helm) | Verified when run in contributor environment |
 | CI workflow outcomes | Verified through repository CI status/check results |
 | Live Azure runtime evidence | Not claimed in this repository |
+| Golden-path adoption, policy, CI reliability, and agent evaluation baselines | Not measured |
 
 ## Operating approach
 
 - Prefer local reproducibility first (`kind`, Helm charts, and manifest checks).
 - Use CI for repeatable quality and policy checks before merge.
 - Treat AKS and Azure policy patterns as target-state architecture references unless explicitly backed by run evidence in linked repositories.
+- Use the proposed [lifecycle policy and feedback measures](./lifecycle.md) as definitions only; they are not evidence that linked repositories meet the policy or that any outcome has improved.
 
 ## Incident and change posture
 
@@ -23,7 +25,7 @@
 ## Portfolio automation
 
 This documentation-only repository has no application build, package manifest,
-or test suite. Its checked-in automation is limited to:
+production deployment, or live service. Its checked-in automation is limited to:
 
 - `Validate portfolio automation`: pull requests, pushes to `main`, and manual
   runs call the central Actions/gh-aw validator with `contents: read` and no
@@ -36,6 +38,9 @@ or test suite. Its checked-in automation is limited to:
 - `Lint Markdown`: pull requests and pushes to `main` run the central Markdown
   style linter, scoped to `README.md` and `docs/**/*.md`. It is read-only and
   does not check external links.
+- A local, offline-tested Helm chart upgrade example is covered by a Python
+  standard-library test. It renders both chart versions but does not connect to
+  a cluster or apply a release.
 
 The automation validator and documentation-upkeep import are pinned to
 [`dac4b81c298cb3ea6821ea312efa5375f42d5ccb`](https://github.com/DevOpsDerek/workflows/tree/dac4b81c298cb3ea6821ea312efa5375f42d5ccb).
@@ -77,6 +82,12 @@ locally from the repository root, use:
 
 ```sh
 npx --yes markdownlint-cli2@0.17.2 README.md 'docs/**/*.md'
+```
+
+To run the offline Helm upgrade example test (requires Helm 3 and Python 3):
+
+```sh
+python3 -m unittest discover -s tests -v
 ```
 
 The central catalog does not provide external link checking or a
