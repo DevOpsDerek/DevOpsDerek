@@ -8,6 +8,23 @@ ROOT = Path(__file__).resolve().parents[1]
 EXAMPLE = ROOT / "examples" / "helm-upgrade"
 
 
+def mapping_after(manifest: str, header: str, indentation: int) -> dict[str, str]:
+    lines = manifest.splitlines()
+    header_index = lines.index(header)
+    mapping: dict[str, str] = {}
+    for line in lines[header_index + 1 :]:
+        if not line.strip():
+            continue
+        line_indentation = len(line) - len(line.lstrip())
+        if line_indentation < indentation:
+            break
+        if line_indentation == indentation:
+            key, separator, value = line.strip().partition(":")
+            if separator:
+                mapping[key] = value.strip()
+    return mapping
+
+
 def render(chart: str, values: str) -> str:
     result = subprocess.run(
         [
@@ -43,6 +60,16 @@ class HelmUpgradeExampleTests(unittest.TestCase):
                 self.assertIn("replicas: 2", manifest)
                 self.assertIn("app.kubernetes.io/instance: sample-api", manifest)
                 self.assertIn("app.kubernetes.io/name: sample-api", manifest)
+                selector_labels = mapping_after(manifest, "    matchLabels:", 6)
+                pod_labels = mapping_after(manifest, "      labels:", 8)
+                self.assertEqual(
+                    {
+                        "app.kubernetes.io/name": "sample-api",
+                        "app.kubernetes.io/instance": "sample-api",
+                    },
+                    selector_labels,
+                )
+                self.assertEqual(selector_labels, pod_labels)
 
         before_image = (
             'image: "nginx@sha256:'

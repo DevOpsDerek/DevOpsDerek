@@ -29,7 +29,8 @@ production deployment, or live service. Its checked-in automation is limited to:
 
 - `Validate portfolio automation`: pull requests, pushes to `main`, and manual
   runs call the central Actions/gh-aw validator with `contents: read` and no
-  inherited secrets.
+  inherited secrets, and run the offline Helm upgrade test with pinned Python
+  and Helm versions.
 - `Portfolio documentation upkeep`: manual runs import the central documentation
   pattern, with read-only agent permissions and at most one safe-output draft PR.
   Proposals are limited to `README.md` and `docs/**/*.md`, excluding
