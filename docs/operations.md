@@ -36,8 +36,8 @@ production deployment, or live service. Its checked-in automation is limited to:
   `docs/security.md`; governance, automation, security policy, and deployment
   changes are outside its scope. There is no schedule or autonomous merge.
 - `Lint Markdown`: pull requests and pushes to `main` run the central Markdown
-  style linter, scoped to `README.md` and `docs/**/*.md`. It is read-only and
-  does not check external links.
+  style linter, scoped to `README.md`, `docs/**/*.md`, and `examples/**/*.md`.
+  It is read-only and does not check external links.
 - A local, offline-tested Helm chart upgrade example is covered by a Python
   standard-library test. It renders both chart versions but does not connect to
   a cluster or apply a release.
@@ -81,7 +81,7 @@ The Markdown check uses the central workflow's Node.js `22.15.0` and
 locally from the repository root, use:
 
 ```sh
-npx --yes markdownlint-cli2@0.17.2 README.md 'docs/**/*.md'
+npx --yes markdownlint-cli2@0.17.2 README.md 'docs/**/*.md' 'examples/**/*.md'
 ```
 
 To run the offline Helm upgrade example test (requires Helm 3 and Python 3):

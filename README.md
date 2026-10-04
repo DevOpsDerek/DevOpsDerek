@@ -29,6 +29,7 @@ Start here: [/docs/index.md](./docs/index.md)
 - [Getting started](./docs/getting-started.md)
 - [Security](./docs/security.md)
 - [Operations](./docs/operations.md)
+- [Lifecycle and feedback measures](./docs/lifecycle.md)
 - [Architecture decisions](./docs/decisions.md)
 - [Repository links](./docs/repositories.md)
 
